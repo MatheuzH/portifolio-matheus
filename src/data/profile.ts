@@ -28,7 +28,7 @@ export const PROFILE = {
   ],
   stacks: {
     frontend: ["React", "TypeScript", "Vite", "Tailwind", "javascript", "html", "css"],
-    backend: ["Node.js", "REST", "Supabase", "PostgreSQL", "firebase", "python", "flask", "java", "spring"],
+    backend: ["Node.js", "REST", "Supabase", "PostgreSQL", "firebase", "python", "flask", "java", "spring", "kotlin"],
     ferramentas: ["Git", "GitHub", "VSCode", "Figma", "Notion", "ChatGPT", "Postman", "Gemini"],
   },
 
@@ -50,7 +50,7 @@ export const PROFILE = {
   projetos: [
     {
       nome: "Portfólio Pessoal - LinkTree Personalizado",
-      descricao: "Plataforma completa de e-commerce com carrinho de compras e painel administrativo.",
+      descricao: "Portfólio pessoal desenvolvido com React, Tailwind e TypeScript, apresentando links para diversos sites do cliente.",
       imagem: printGabizito, 
       link: "https://www.gabrielazito.com",
       tecnologias: ["React", "TypeScript", "tailwindcss"]

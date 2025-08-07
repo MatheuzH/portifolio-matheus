@@ -127,7 +127,7 @@ const Index = () => {
               <CardContent className="p-6 space-y-4">
                 <h2 className="text-2xl font-semibold flex items-center gap-2"><Code2 /> Sobre mim</h2>
                 <p className="text-muted-foreground">
-                  Desenvolvedor apaixonado por criar experiências fluídas e acessíveis. Gosto de resolver problemas complexos com soluções criativas.
+                  Desenvolvedor apaixonado por transformar ideias em soluções digitais. Adoro enfrentar desafios complexos e criar aplicações funcionais, intuitivas e escaláveis que gerem impacto real.
                 </p>
               </CardContent>
             </Card>
