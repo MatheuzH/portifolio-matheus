@@ -207,7 +207,7 @@ const Index = () => {
                       <h3 className="font-medium text-lg">{form.curso} • {form.instituicao}</h3>
                       <p className="text-muted-foreground">{form.descricao}</p>
                     </div>
-                    <Badge className="flex-shrink-0" variant="secondary">{form.periodo}</Badge>
+                    <Badge className="flex-shrink-0">{form.periodo}</Badge>
                   </div>
                 </CardContent>
               </Card>
