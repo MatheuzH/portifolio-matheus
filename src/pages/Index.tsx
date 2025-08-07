@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Github, Linkedin, Mail, Rocket, Terminal, Workflow, Code2, Cpu } from "lucide-react";
+import { Github, Linkedin, Mail, Rocket, Terminal, Workflow, Code2, Cpu, GraduationCap, Briefcase } from "lucide-react";
 import { useEffect } from "react";
 import InteractiveParticles from "@/components/background/InteractiveParticles";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PROFILE } from "@/data/profile";
-import profileImage from "@/assets/profile-hero.jpg";
+import profileImage from "@/assets/matheusHerzog.jpg";
 
 const Index = () => {
   // Basic SEO for SPA
@@ -105,7 +105,6 @@ const Index = () => {
             </div>
             <div className="flex gap-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2"><Terminal className="opacity-80" /> Clean Code</div>
-              <div className="flex items-center gap-2"><Workflow className="opacity-80" /> CI/CD</div>
               <div className="flex items-center gap-2"><Rocket className="opacity-80" /> Performance</div>
             </div>
           </div>
@@ -128,7 +127,7 @@ const Index = () => {
               <CardContent className="p-6 space-y-4">
                 <h2 className="text-2xl font-semibold flex items-center gap-2"><Code2 /> Sobre mim</h2>
                 <p className="text-muted-foreground">
-                  Desenvolvedor apaixonado por criar experiências fluídas e acessíveis. Gosto de resolver problemas complexos com soluções simples e elegantes.
+                  Desenvolvedor apaixonado por criar experiências fluídas e acessíveis. Gosto de resolver problemas complexos com soluções criativas.
                 </p>
               </CardContent>
             </Card>
@@ -152,7 +151,7 @@ const Index = () => {
         </section>
 
         <section id="experiencias" className="container py-10">
-          <h2 className="text-2xl font-semibold mb-4">Experiências</h2>
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2"><Briefcase /> Experiências</h2>
           <Tabs defaultValue="xp" className="w-full">
             <TabsList>
               <TabsTrigger value="xp">Timeline</TabsTrigger>
@@ -186,6 +185,56 @@ const Index = () => {
               </div>
             </TabsContent>
           </Tabs>
+        </section>
+        <section id="formacao" className="container py-10">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2"><GraduationCap /> Formação Acadêmica</h2>
+          <div className="space-y-4">
+            {PROFILE.formacoes.map((form) => (
+              <Card key={form.instituicao} className="hover-scale">
+                <CardContent className="p-6">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <h3 className="font-medium text-lg">{form.curso} • {form.instituicao}</h3>
+                      <p className="text-muted-foreground">{form.descricao}</p>
+                    </div>
+                    <Badge>{form.periodo}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+        <section id="projetos" className="container py-10">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2"> Projetos</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROFILE.projetos.map((proj) => (
+              <a
+                key={proj.nome}
+                href={proj.link}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative block overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src={proj.imagem}
+                  alt={`Interface do projeto ${proj.nome}`}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                {/* Overlay para escurecer a imagem e melhorar a legibilidade */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                <div className="relative flex h-full flex-col justify-end p-4 md:p-6 text-white">
+                  <h3 className="text-xl font-bold">{proj.nome}</h3>
+                  <p className="text-sm text-gray-300 mt-1">{proj.descricao}</p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {proj.tecnologias.map(tech => (
+                      <Badge key={tech} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm border-0">{tech}</Badge>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </section>
       </main>
 
